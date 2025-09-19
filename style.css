@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #1e1f29, #3b0a45, #000);
+  color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle at top, #d3d0d2, #ff12b7);
+  animation: pulse 4s ease-in-out infinite;
+  box-shadow: 0 0 60px rgba(255, 18, 183, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 40px rgba(255, 18, 183, 0.6);
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 80px rgba(255, 18, 183, 0.9);
+  }
+}
+
+.circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.para-main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: #fff;
+  text-shadow: 0 0 10px #ff12b7, 0 0 20px #ff6fe2;
+  animation: fadeInText 2s ease forwards;
+  cursor: pointer;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.para-main:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  text-shadow: 0 0 20px #fff, 0 0 40px #ff12b7;
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    letter-spacing: 20px;
+  }
+
+  to {
+    opacity: 1;
+    letter-spacing: 3px;
+  }
+}
+
+.orbit {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 15px #ff12b7;
+}
+
+.orbit1 {
+  animation: spin1 6s linear infinite;
+  top: 50%;
+  left: 50%;
+}
+
+.orbit2 {
+  animation: spin2 8s linear infinite;
+  top: 50%;
+  left: 50%;
+  background: #ff12b7;
+}
+
+.orbit3 {
+  animation: spin3 10s linear infinite;
+  top: 50%;
+  left: 50%;
+  background: #ff69d2;
+}
+
+@keyframes spin1 {
+  0% {
+    transform: rotate(0deg) translateX(130px) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(130px) rotate(-360deg);
+  }
+}
+
+@keyframes spin2 {
+  0% {
+    transform: rotate(0deg) translateY(140px) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg) translateY(140px) rotate(360deg);
+  }
+}
+
+@keyframes spin3 {
+  0% {
+    transform: rotate(0deg) translateX(-120px) rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(-120px) rotate(-360deg);
+  }
+}
